@@ -1,33 +1,67 @@
 <template>
-    <div class="sidebar-wrapper" @click="handleClick">
+    <div class="sidebar-wrapper">
+        <div class="sidebar-hidden" @click="handleClickHiddenSidebar"><i class="fas fa-chevron-left"></i></div>
         <h1 class="logo">S-River</h1>
-        <Nav></Nav>
+        <PersonalNav/>
+        <AppNav></AppNav>
     </div>
 </template>
 
 <script lang="ts">
     import Vue from 'vue'
-    import Nav from  './Nav.vue'
+    import PersonalNav from './Nav-Personal.vue'
+    import AppNav from  './Nav-App.vue'
 
     export default Vue.extend({
+
+        props: {
+
+        },
+
         data() {
             return {
-                color: 'red'
+                color: 'red',
+                sidebarHidden: 1
             }
         },
         components : {
-            Nav
+            AppNav,
+            PersonalNav
         },
         methods: {
-            handleClick(e: MouseEvent) {
-                console.log(e.target)
-                // this.color = this.color === "blue" ? 'red': 'blue'
+            handleClickHiddenSidebar() {
+                if(this.sidebarHidden) {
+                    this.sidebarHidden = 0
+                }else
+                    this.sidebarHidden = 1
+                console.log(this.sidebarHidden)
+                this.$emit('onHiddenSidebar', this.sidebarHidden)
             }
-        }
+        },
     })
 </script>
 
 <style lang="scss" scoped>
+    .sidebar-wrapper {
+        position: relative;
+    }
+    .sidebar-hidden {
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: $color4;
+        position: absolute;
+        left: 100%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        line-height: 2.75rem;
+        color: $color2;
+        border-radius: 10rem;
+        i {
+            font-size: 1.25rem;
+        }
+        
+    }
     .logo {
         width: 100%;
         height: 5rem;

@@ -2,19 +2,16 @@
     <div class="nav-wrapper">
         <ul >
             <li>
-                <router-link to="/"><i class="fas fa-compact-disc"></i>Home</router-link>
+                <router-link to="/m/"><i class="fas fa-compact-disc"></i>My Songs</router-link>
             </li>
             <li>
-                <router-link to="/personal"><i class="fas fa-headphones-alt"></i>Personal</router-link>
+                <router-link to="/m/playlists"><i class="fas fa-chart-line"></i>My Playlists</router-link>
             </li>
             <li>
-                <router-link to="/rating"><i class="fas fa-chart-line"></i>Rating</router-link>
+                <router-link to="/m/favorites"><i class="fas fa-podcast"></i>My Favorites</router-link>
             </li>
             <li>
-                <router-link to="/categories"><i class="fas fa-podcast"></i>Categories</router-link>
-            </li>
-            <li>
-                <router-link to="/singers"><i class="fas fa-music"></i>Singers</router-link>
+                <router-link to="/m/singers"><i class="fas fa-music"></i>My Singers</router-link>
             </li>
         </ul>
     </div>
@@ -43,8 +40,8 @@
             height: 100%;
             li {
                 width: 100%;
-                height: 15%;
-                margin: 0 auto;
+                height: 17%;
+                margin: 0rem auto;
                 a {
                     width: 100%;
                     height: 100%;

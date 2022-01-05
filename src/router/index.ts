@@ -3,6 +3,8 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Main from '../components/layouts/Main.vue'
 import NotFound from '../components/layouts/NotFound.vue'
 import Home from '../components/partials/main/content/Home.vue'
+import MySongs from '../components/partials/main/content/MySongs.vue'
+import MyPlaylists from '../components/partials/main/content/MyPlaylists.vue'
 
 Vue.use(VueRouter)
 
@@ -31,6 +33,26 @@ const routes: Array<RouteConfig> = [
       {
         path: 'singers',
         component: Main
+      },
+      {
+        path: '/m',
+        component:  MySongs
+      },
+      {
+        path: '/m/songs',
+        component:  MySongs
+      },
+      {
+        path: '/m/playlists',
+        component: MyPlaylists
+      },
+      {
+        path: '/m/favorites',
+        component: MyPlaylists
+      },
+      {
+        path: '/m/singers',
+        component: MyPlaylists
       }
     ]
   },

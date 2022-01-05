@@ -1,6 +1,6 @@
 <template>
-    <div class="home-content">
-
+    <div>
+        My playlist
     </div>
 </template>
 
@@ -12,9 +12,6 @@
     })
 </script>
 
-<style lang="scss" scoped>
-    .home-content {
-        width: 100%;
-        height: 90%;
-    }
+<style scoped>
+
 </style>
